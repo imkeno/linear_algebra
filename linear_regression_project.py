@@ -14,7 +14,7 @@
 # [2 Gaussian Jordan 消元法](#2-Gaussian-Jordan-消元法)  
 # [3  线性回归](#3-线性回归)  
 
-# In[3]:
+# In[1]:
 
 
 # 任意选一个你喜欢的整数，这能帮你得到稳定的结果
@@ -25,7 +25,7 @@ seed = 6# TODO
 # 
 # ## 1.1 创建一个 4*4 的单位矩阵
 
-# In[4]:
+# In[2]:
 
 
 # 这个项目设计来帮你熟悉 python list 和线性代数
@@ -55,7 +55,7 @@ I = [[1,0,0,0],
 
 # ## 1.2 返回矩阵的行数和列数
 
-# In[5]:
+# In[23]:
 
 
 # TODO 返回矩阵的行数和列数
@@ -69,7 +69,7 @@ def shape(M):
     return row,col
 
 
-# In[6]:
+# In[4]:
 
 
 # 运行以下代码测试你的 shape 函数
@@ -78,7 +78,7 @@ get_ipython().run_line_magic('run', '-i -e test.py LinearRegressionTestCase.test
 
 # ## 1.3 每个元素四舍五入到特定小数数位
 
-# In[7]:
+# In[5]:
 
 
 # TODO 每个元素四舍五入到特定小数数位
@@ -90,7 +90,7 @@ def matxRound(M, decPts=4):
             M[x][y] = round(M[x][y],decPts)
 
 
-# In[8]:
+# In[6]:
 
 
 # 运行以下代码测试你的 matxRound 函数
@@ -99,7 +99,7 @@ get_ipython().run_line_magic('run', '-i -e test.py LinearRegressionTestCase.test
 
 # ## 1.4 计算矩阵的转置
 
-# In[9]:
+# In[7]:
 
 
 # TODO 计算矩阵的转置
@@ -109,7 +109,7 @@ def transpose(M):
     
 
 
-# In[10]:
+# In[8]:
 
 
 # 运行以下代码测试你的 transpose 函数
@@ -118,7 +118,7 @@ get_ipython().run_line_magic('run', '-i -e test.py LinearRegressionTestCase.test
 
 # ## 1.5 计算矩阵乘法 AB
 
-# In[11]:
+# In[9]:
 
 
 # TODO 计算矩阵乘法 AB，如果无法相乘则raise ValueError
@@ -137,7 +137,7 @@ def matxMultiply(A, B):
         return AB
 
 
-# In[12]:
+# In[10]:
 
 
 # 运行以下代码测试你的 matxMultiply 函数
@@ -171,7 +171,7 @@ get_ipython().run_line_magic('run', '-i -e test.py LinearRegressionTestCase.test
 #     ...    & ... & ... & ...& ...\\
 #     a_{n1}    & a_{n2} & ... & a_{nn} & b_{n} \end{bmatrix}$
 
-# In[13]:
+# In[11]:
 
 
 # TODO 构造增广矩阵，假设A，b行数相同
@@ -179,7 +179,7 @@ def augmentMatrix(A, b):
     return  [row_a+row_b for row_a,row_b in zip(A,b)]
 
 
-# In[14]:
+# In[12]:
 
 
 # 运行以下代码测试你的 augmentMatrix 函数
@@ -191,7 +191,7 @@ get_ipython().run_line_magic('run', '-i -e test.py LinearRegressionTestCase.test
 # - 把某行乘以一个非零常数
 # - 把某行加上另一行的若干倍：
 
-# In[15]:
+# In[13]:
 
 
 # TODO r1 <---> r2
@@ -203,14 +203,14 @@ def swapRows(M, r1, r2):
     pass
 
 
-# In[16]:
+# In[14]:
 
 
 # 运行以下代码测试你的 swapRows 函数
 get_ipython().run_line_magic('run', '-i -e test.py LinearRegressionTestCase.test_swapRows')
 
 
-# In[17]:
+# In[15]:
 
 
 # TODO r1 <--- r1 * scale
@@ -226,14 +226,14 @@ def scaleRow(M, r, scale):
         M[r] = tmp
 
 
-# In[18]:
+# In[16]:
 
 
 # 运行以下代码测试你的 scaleRow 函数
 get_ipython().run_line_magic('run', '-i -e test.py LinearRegressionTestCase.test_scaleRow')
 
 
-# In[19]:
+# In[17]:
 
 
 # TODO r1 <--- r1 + r2*scale
@@ -252,7 +252,7 @@ def addScaledRow(M, r1, r2, scale):
     pass
 
 
-# In[20]:
+# In[18]:
 
 
 # 运行以下代码测试你的 addScaledRow 函数
@@ -332,7 +332,7 @@ get_ipython().run_line_magic('run', '-i -e test.py LinearRegressionTestCase.test
 
 # #### 以下开始你的尝试吧!
 
-# In[21]:
+# In[19]:
 
 
 # 不要修改这里！
@@ -358,13 +358,13 @@ printInMatrixFormat(Ab,padding=3,truncating=0)
 #     0 & 0 & 1 & \frac{113}{371} \end{bmatrix}$
 #     
 # $ --> \begin{bmatrix}
-#     1 & 0 & 0 & -\frac{15}{1113} \\
-#     0 & 1 & 0 & -\frac{1827}{10759} \\
+#     1 & 0 & 0 & -\frac{18275}{14469} \\
+#     0 & 1 & 0 & \frac{86757}{527191} \\
 #     0 & 0 & 1 & \frac{113}{371} \end{bmatrix}$
 #     
 # $...$
 
-# In[22]:
+# In[20]:
 
 
 # 不要修改这里！
@@ -380,24 +380,24 @@ printInMatrixFormat(Ab,padding=3,truncating=0)
 # 
 # $ Ab = \begin{bmatrix}
 #     0 & －1 & －7 & 1 \\
-#     0 & 0 & 19 & 1 \\
+#     0 & 0 & -15 & 4 \\
 #     0 & 0 & －51 & 7 \end{bmatrix}$
 # 
 # $ --> \begin{bmatrix}
 #     0 & 1 & 7 & －1 \\
-#     0 & 0 & 1 &  \frac{1}{19}\\
+#     0 & 0 & 1 &  -\frac{4}{15}\\
 #     0 & 0 & -51 & 7 \end{bmatrix}$
 #     
 # $ --> \begin{bmatrix}
 #     0 & 1 & 7 & -1 \\
-#     0 & 0 & 1 & \frac{1}{19} \\
-#     0 & 0 & 0 & \frac{184}{19} \end{bmatrix}$
+#     0 & 0 & 1 & -\frac{4}{15} \\
+#     0 & 0 & 0 & \frac{99}{15} \end{bmatrix}$
 #     
 # $...$
 
 # ### 2.3.3 实现 Gaussian Jordan 消元法
 
-# In[23]:
+# In[25]:
 
 
 # TODO 实现 Gaussain Jordan 方法求解 Ax = b
@@ -442,7 +442,7 @@ def gj_Solve(A, b, decPts=4, epsilon=1.0e-16):
         cur_row = trans_Ab[c][c:]
         max_value = max(cur_row,key=abs)
         #如果绝对值最大值为0，奇异矩阵
-        if max_value == 0:
+        if abs(max_value) < epsilon:
             return None #A为奇异矩阵
         else:
             max_row = cur_row.index(max_value) + c
@@ -456,7 +456,7 @@ def gj_Solve(A, b, decPts=4, epsilon=1.0e-16):
     return x
 
 
-# In[24]:
+# In[26]:
 
 
 # 运行以下代码测试你的 gj_Solve 函数
@@ -491,7 +491,7 @@ get_ipython().run_line_magic('run', '-i -e test.py LinearRegressionTestCase.test
 
 # ## 3.1 随机生成样本点
 
-# In[25]:
+# In[28]:
 
 
 # 不要修改这里！
@@ -506,7 +506,7 @@ vs_scatter_2d(X, Y)
 # 
 # ### 3.2.1 猜测一条直线
 
-# In[26]:
+# In[29]:
 
 
 #TODO 请选择最适合的直线 y = mx + b
@@ -525,7 +525,7 @@ vs_scatter_2d(X, Y, m1, b1)
 # MSE = \frac{1}{n}\sum_{i=1}^{n}{(y_i - mx_i - b)^2}
 # $$
 
-# In[27]:
+# In[30]:
 
 
 # TODO 实现以下函数并输出所选直线的MSE
@@ -536,8 +536,8 @@ def calculateMSE2D(X,Y,m,b):
     if(xlen == ylen):
         for i in range(len(X)):
             value = float(Y[i])-m*float(X[i])-b
-            sum_value = value + sum_value
-        value_square = sum_value*sum_value
+            value_square = value*value
+            sum_value = value_square + sum_value
     return value_square/xlen
 # TODO 检查这里的结果, 如果你上面猜测的直线准确, 这里的输出会在1.5以内
 print(calculateMSE2D(X,Y,m1,b1))
@@ -764,7 +764,7 @@ print(calculateMSE2D(X,Y,m1,b1))
 # 
 # 在3.3 中，我们知道线性回归问题等价于求解 $X^TXh = X^TY$ (如果你选择不做3.3，就勇敢的相信吧，哈哈)
 
-# In[28]:
+# In[31]:
 
 
 # TODO 实现线性回归
