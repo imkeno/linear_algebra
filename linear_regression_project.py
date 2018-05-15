@@ -55,7 +55,7 @@ I = [[1,0,0,0],
 
 # ## 1.2 返回矩阵的行数和列数
 
-# In[23]:
+# In[3]:
 
 
 # TODO 返回矩阵的行数和列数
@@ -348,23 +348,48 @@ printInMatrixFormat(Ab,padding=3,truncating=0)
 # 在下面列出每一次循环体执行之后的增广矩阵(注意使用[分数语法](#分数的输入方法))
 # 
 # $ Ab = \begin{bmatrix}
+#     -9 & 2 & 4 & 1 \\
 #     1 & 3 & 5 & 1 \\
-#     0 & 29 & 49 & 10 \\
-#     0 & 9 & 28 & 7 \end{bmatrix}$
+#     -6 & -9 & -2 & 1 \end{bmatrix}$
 # 
 # $ --> \begin{bmatrix}
-#     1 & 0 & -\frac{13}{3} & -\frac{4}{3} \\
-#     0 & 1 & \frac{49}{29} & \frac{10}{29} \\
-#     0 & 0 & 1 & \frac{113}{371} \end{bmatrix}$
+#     1 & -\frac{2}{9} & -\frac{4}{9} & -\frac{1}{9} \\
+#     1 & 3 & 5 & 1 \\
+#     -6 & -9 & -2 & 1 \end{bmatrix}$
 #     
 # $ --> \begin{bmatrix}
-#     1 & 0 & 0 & -\frac{18275}{14469} \\
-#     0 & 1 & 0 & \frac{86757}{527191} \\
-#     0 & 0 & 1 & \frac{113}{371} \end{bmatrix}$
+#     1 & -\frac{2}{9} & -\frac{4}{9} & -\frac{1}{9} \\
+#     0 & \frac{29}{9} & \frac{49}{9} & \frac{10}{9} \\
+#     0 & -\frac{31}{3} & -\frac{14}{3} & \frac{1}{3} \end{bmatrix}$
+# 
+# $ --> \begin{bmatrix}
+#     1 & -\frac{2}{9} & -\frac{4}{9} & -\frac{1}{9} \\
+#     0 & -\frac{31}{3} & -\frac{14}{3} & \frac{1}{3} \\
+#     0 & \frac{29}{9} & \frac{49}{9} & \frac{10}{9}  \end{bmatrix}$
+#     
+# $ --> \begin{bmatrix}
+#     1 & -\frac{2}{9} & -\frac{4}{9} & -\frac{1}{9} \\
+#     0 & 1 & \frac{14}{31} & -\frac{1}{31} \\
+#     0 & \frac{29}{9} & \frac{49}{9} & \frac{10}{9}  \end{bmatrix}$
+#     
+# $ --> \begin{bmatrix}
+#     1 & 0 & \frac{96}{279} & -\frac{33}{279} \\
+#     0 & 1 & \frac{14}{31} & -\frac{1}{31} \\
+#     0 & 0 & \frac{371}{93} & \frac{113}{93}  \end{bmatrix}$
+# 
+# $ --> \begin{bmatrix}
+#     1 & 0 & \frac{96}{279} & -\frac{33}{279} \\
+#     0 & 1 & \frac{14}{31} & -\frac{1}{31} \\
+#     0 & 0 & 1 & \frac{113}{371}  \end{bmatrix}$
+#     
+# $ --> \begin{bmatrix}
+#     1 & 0 & 0 & -\frac{7697}{34503} \\
+#     0 & 1 & 0 & -\frac{9}{53} \\
+#     0 & 0 & 1 & \frac{113}{371}  \end{bmatrix}$
 #     
 # $...$
 
-# In[20]:
+# In[32]:
 
 
 # 不要修改这里！
@@ -379,25 +404,35 @@ printInMatrixFormat(Ab,padding=3,truncating=0)
 # 在下面列出每一次循环体执行之后的增广矩阵(注意使用[分数语法](#分数的输入方法))
 # 
 # $ Ab = \begin{bmatrix}
-#     0 & －1 & －7 & 1 \\
-#     0 & 0 & -15 & 4 \\
-#     0 & 0 & －51 & 7 \end{bmatrix}$
-# 
-# $ --> \begin{bmatrix}
-#     0 & 1 & 7 & －1 \\
-#     0 & 0 & 1 &  -\frac{4}{15}\\
-#     0 & 0 & -51 & 7 \end{bmatrix}$
+#     0 & 6 & －9 & 1 \\
+#     0 & 3 & 5 & 1 \\
+#     0 & -1 & －7 & 1 \end{bmatrix}$
 #     
 # $ --> \begin{bmatrix}
-#     0 & 1 & 7 & -1 \\
-#     0 & 0 & 1 & -\frac{4}{15} \\
-#     0 & 0 & 0 & \frac{99}{15} \end{bmatrix}$
+#     0 & 1 & －\frac{3}{2} & \frac{1}{6} \\
+#     0 & 3 & 5 & 1 \\
+#     0 & -1 & －7 & 1 \end{bmatrix}$
+#     
+# $ --> \begin{bmatrix}
+#     0 & 1 & －\frac{3}{2} & \frac{1}{6} \\
+#     0 & 0 & \frac{19}{2} & \frac{1}{2} \\
+#     0 & 0 & -\frac{17}{2} & \frac{7}{6} \end{bmatrix}$
+# 
+# $ --> \begin{bmatrix}
+#     0 & 1 & －\frac{3}{2} & \frac{1}{6} \\
+#     0 & 0 & 1 & \frac{1}{19} \\
+#     0 & 0 & -\frac{17}{2} & \frac{7}{6} \end{bmatrix}$
+#     
+# $ --> \begin{bmatrix}
+#     0 & 1 & 0 & \frac{14}{57} \\
+#     0 & 0 & 1 & \frac{1}{19} \\
+#     0 & 0 & 0 & \frac{92}{57} \end{bmatrix}$
 #     
 # $...$
 
 # ### 2.3.3 实现 Gaussian Jordan 消元法
 
-# In[25]:
+# In[20]:
 
 
 # TODO 实现 Gaussain Jordan 方法求解 Ax = b
@@ -456,7 +491,7 @@ def gj_Solve(A, b, decPts=4, epsilon=1.0e-16):
     return x
 
 
-# In[26]:
+# In[21]:
 
 
 # 运行以下代码测试你的 gj_Solve 函数
@@ -491,7 +526,7 @@ get_ipython().run_line_magic('run', '-i -e test.py LinearRegressionTestCase.test
 
 # ## 3.1 随机生成样本点
 
-# In[28]:
+# In[22]:
 
 
 # 不要修改这里！
@@ -506,7 +541,7 @@ vs_scatter_2d(X, Y)
 # 
 # ### 3.2.1 猜测一条直线
 
-# In[29]:
+# In[23]:
 
 
 #TODO 请选择最适合的直线 y = mx + b
@@ -525,7 +560,7 @@ vs_scatter_2d(X, Y, m1, b1)
 # MSE = \frac{1}{n}\sum_{i=1}^{n}{(y_i - mx_i - b)^2}
 # $$
 
-# In[30]:
+# In[24]:
 
 
 # TODO 实现以下函数并输出所选直线的MSE
@@ -538,7 +573,7 @@ def calculateMSE2D(X,Y,m,b):
             value = float(Y[i])-m*float(X[i])-b
             value_square = value*value
             sum_value = value_square + sum_value
-    return value_square/xlen
+    return sum_value/xlen
 # TODO 检查这里的结果, 如果你上面猜测的直线准确, 这里的输出会在1.5以内
 print(calculateMSE2D(X,Y,m1,b1))
 
@@ -764,7 +799,7 @@ print(calculateMSE2D(X,Y,m1,b1))
 # 
 # 在3.3 中，我们知道线性回归问题等价于求解 $X^TXh = X^TY$ (如果你选择不做3.3，就勇敢的相信吧，哈哈)
 
-# In[31]:
+# In[25]:
 
 
 # TODO 实现线性回归
@@ -804,7 +839,7 @@ def linearRegression2D(X,Y):
     return ret[0][0],ret[1][0]
 
 
-# In[29]:
+# In[26]:
 
 
 # 请不要修改下面的代码
@@ -817,7 +852,7 @@ print(m2,b2)
 # 你求得的回归结果是什么？
 # 请使用运行以下代码将它画出来。
 
-# In[30]:
+# In[27]:
 
 
 ## 请不要修改下面的代码
@@ -829,7 +864,7 @@ print(calculateMSE2D(X,Y,m2,b2))
 # 如果你的高斯约当消元法通过了单元测试, 那么它将能够解决多维的回归问题  
 # 你将会在更高维度考验你的线性回归实现
 
-# In[49]:
+# In[28]:
 
 
 # 生成三维的数据点
@@ -839,7 +874,7 @@ vs_scatter_3d(X_3d, Y_3d)
 
 # 你的线性回归是否能够对付三维的情况?
 
-# In[50]:
+# In[29]:
 
 
 def linearRegression(X,Y):
@@ -857,7 +892,7 @@ def linearRegression(X,Y):
     return ret[0][0],ret[1][0],ret[2][0]
 
 
-# In[51]:
+# In[30]:
 
 
 coeff = linearRegression(X_3d, Y_3d)
