@@ -383,7 +383,7 @@ printInMatrixFormat(Ab,padding=3,truncating=0)
 #     0 & 0 & 1 & \frac{113}{371}  \end{bmatrix}$
 #     
 # $ --> \begin{bmatrix}
-#     1 & 0 & 0 & -\frac{7697}{34503} \\
+#     1 & 0 & 0 & -\frac{5}{371} \\
 #     0 & 1 & 0 & -\frac{9}{53} \\
 #     0 & 0 & 1 & \frac{113}{371}  \end{bmatrix}$
 #     
